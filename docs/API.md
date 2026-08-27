@@ -37,3 +37,18 @@
 | `territoryConflict` | boolean | 存在区域冲突 |
 
 接口统一返回 `ApiResponse`；业务冲突使用 HTTP 409，参数错误使用 400，未认证使用 401，无权限使用 403。
+
+## 专业渠道经营接口
+
+| 方法 | 路径 | 说明 |
+| --- | --- | --- |
+| GET | `/api/dealer-ops/dashboard` | 伙伴、订单与返利总览 |
+| POST | `/api/dealer-ops/dealers` | 登记经销商 |
+| POST | `/api/dealer-ops/dealers/{id}/submit` | 提交准入审核 |
+| POST | `/api/admin/dealer-ops/dealers/{id}/approve` | 批准准入及授信 |
+| POST | `/api/dealer-ops/dealers/{id}/authorizations` | 建立产品区域授权与价格底线 |
+| POST | `/api/dealer-ops/orders` | 创建渠道订单并执行门禁 |
+| POST | `/api/admin/dealer-ops/orders/{id}/approve` | 批准并占用信用额度 |
+| POST | `/api/dealer-ops/orders/{id}/fulfill` | 登记履约 |
+| POST | `/api/dealer-ops/orders/{id}/rebates` | 申请返利 |
+| POST | `/api/admin/dealer-ops/rebates/{id}/settle` | 审批结算返利 |
