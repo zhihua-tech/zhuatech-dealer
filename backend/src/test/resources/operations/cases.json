@@ -1,0 +1,50 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "stockDays": "#30.4167",
+      "unsecured": "#300",
+      "creditGap": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "annualSales": "0"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "stockDays": "N/A"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "creditLimit": "100"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "stockValue": "10000"
+    },
+    "expected": {
+      "decision": "REVIEW"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "annualSales": "0",
+      "stockValue": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  }
+]

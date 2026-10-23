@@ -1,0 +1,84 @@
+{
+  "slug": "dealer",
+  "title": "渠道库存覆盖与无担保逾期敞口",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "stockValue",
+      "label": "库存金额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "annualSales",
+      "label": "年销售口径金额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "overdueDebt",
+      "label": "逾期应收",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "collateral",
+      "label": "担保覆盖",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "creditLimit",
+      "label": "无担保限额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "stockDays",
+      "label": "库存覆盖天数"
+    },
+    {
+      "key": "unsecured",
+      "label": "无担保逾期额"
+    },
+    {
+      "key": "creditGap",
+      "label": "超限敞口"
+    }
+  ],
+  "description": "根据输入年销售测算库存天数，区分无销售积压和超出授信的无担保逾期余额。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "stockValue": "1000",
+        "annualSales": "12000",
+        "overdueDebt": "500",
+        "collateral": "200",
+        "creditLimit": "1000"
+      }
+    ]
+  }
+}
